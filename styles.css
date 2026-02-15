@@ -1,14 +1,29 @@
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins', sans-serif;
 }
+html{
+    scroll-behavior:smooth;
+}
 
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#0f0c29,#1f1b4d,#302b63);
+    overflow-x:hidden;
+    position:relative;
+}
+
+/*
 body{
     background:linear-gradient(135deg,#1a1446,#2b1e63,#3d2f7a);
     color:white;
 }
+*/
 
 /* NAV */
 header{
@@ -54,10 +69,11 @@ nav a:hover{
 }
 
 .hero-img img{
-    width:350px;
-    border-radius:30px;
-    box-shadow:0 0 50px rgba(255,110,196,0.4);
-    transition:0.4s;
+    width: 280px;px;
+    max-width:280px;
+    border-radius:100%;
+    box-shadow:0 0 50px rgba(198, 100, 200, 0.8);
+    transition:0.8s;
 }
 
 .hero-img img:hover{
@@ -175,6 +191,8 @@ nav a:hover{
     border-radius:20px;
     border:1px solid #ff6ec4;
     font-size:14px;
+    color:#ffd6ff;
+
 }
 
 /* COMENTARIOS */
@@ -259,4 +277,153 @@ footer{
         flex-direction:column;
         gap:20px;
     }
+}
+/* CONTACTO */
+
+.contacto{
+    text-align:center;
+}
+
+.contact-card{
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    max-width:500px;
+    margin:auto;
+    transition:0.4s;
+}
+
+.contact-card:hover{
+    box-shadow:0 0 30px rgba(255,110,196,0.3);
+    transform:translateY(-5px);
+}
+
+.contact-card p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.contact-card a{
+    color:#ffb6f9;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.contact-card a:hover{
+    color:#ffffff;
+}
+
+.contact-dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.contact-menu{
+    position:absolute;
+    top:60px;
+    left:0;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border-radius:15px;
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-width:180px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:0.3s ease;
+    z-index:999;
+}
+
+.contact-menu a{
+    text-decoration:none;
+    color:#ffb6f9;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.contact-menu a:hover{
+    color:white;
+}
+
+.contact-menu.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+/* ⭐ ESTRELLAS */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:200%;
+    height:200%;
+    background-image:
+        radial-gradient(15px 15px at 15px 15px, white, transparent),
+        radial-gradient(10px 10px at 100px 80px, #ffd6ff, transparent),
+        radial-gradient(5px 5px at 200px 150px, white, transparent),
+        radial-gradient(3px 3px at 300px 220px, #ffb6f9, transparent),
+        radial-gradient(1.5px 1.5px at 400px 300px, white, transparent),
+        radial-gradient(2px 2px at 500px 100px, white, transparent),
+        radial-gradient(1.5px 1.5px at 600px 250px, #ffd6ff, transparent),
+        radial-gradient(2px 2px at 700px 350px, white, transparent),
+        radial-gradient(1.5px 1.5px at 800px 450px, #ffb6f9, transparent),
+        radial-gradient(2px 2px at 900px 550px, white, transparent),
+        radial-gradient(1.5px 1.5px at 1000px 650px, #ffd6ff, transparent),
+        radial-gradient(2px 2px at 1100px 750px, white, transparent);
+
+    background-repeat:repeat;
+    background-size:400px 400px;
+    animation:starsMove 80s linear infinite;
+    opacity:0.8;
+    pointer-events:none;
+    z-index:0;
+}
+
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-600px);
+    }
+}
+
+/* 🌸 NEBULOSA */
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-200px;
+    right:-200px;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle, rgba(255,110,196,0.25), transparent 70%);
+    filter:blur(120px);
+    pointer-events:none;
+    z-index:0;
+}
+header,
+section{
+    position:relative;
+    z-index:1;
+}
+h1{
+    color:#ffffff;
+}
+
+h2{
+    color:#ffffff;
+}
+h3{
+    color:#ffb6f9;
+}
+p{
+    color:#ffffff;
 }
